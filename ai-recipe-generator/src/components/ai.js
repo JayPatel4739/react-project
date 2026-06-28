@@ -8,7 +8,7 @@ const client = new OpenAI({
 
 export default async function generateRecipe(ingredients){
     const response = await client.responses.create({
-        model: "gpt-4.1-nano",
+        model: import.meta.env.VITE_MODEL,
         input: [
             {
                 role: "system",
