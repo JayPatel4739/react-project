@@ -4,23 +4,10 @@ import RecipeShow from "./RecipeShow"
 import IngredientsList from './IngredientsList'
 
 export default function Recipe() {
-    const [ingredients, setIngredients] = React.useState(() => {
-        const saved = localStorage.getItem("ingredients")
-        return saved ? JSON.parse(saved) : []
-    })
+    const [ingredients, setIngredients] = React.useState([])
 
-    const [recipe, setRecipe] = React.useState(() => {
-        return localStorage.getItem("recipe") || ""
-    })
+    const [recipe, setRecipe] = React.useState("")
     const [isLoading, setIsLoading] = React.useState(false)
-
-    React.useEffect(() => {
-        localStorage.setItem("ingredients", JSON.stringify(ingredients))
-    }, [ingredients])
-
-    React.useEffect(() => {
-        localStorage.setItem("recipe", recipe)
-    }, [recipe])
 
     function addIngredient(formData){
         const ingredient = formData.get("ingredient")
