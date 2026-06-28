@@ -7,3 +7,6 @@ https://github.com/user-attachments/assets/b1f33631-bab5-44f3-815f-89d22147dc13
 This project was built to practice and understand state. 
 
 https://github.com/user-attachments/assets/60c01c6f-1af8-4a94-a87f-bcc61a2ff723
+
+# 3. ai-recipe-generator
+This project was built to practice and understand how the state works for interactive websites. 
