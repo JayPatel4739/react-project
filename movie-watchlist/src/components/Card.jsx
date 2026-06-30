@@ -15,7 +15,7 @@ export default function Card(props) {
         <div className="card-meta">
           <span className="rating">
             <span className="rating-star" aria-hidden="true">★</span>
-            {props.rating.toFixed(1)}
+            {props.rating}
           </span>
           <span className="card-year">{props.year}</span>
         </div>

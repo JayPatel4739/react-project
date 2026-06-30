@@ -1,11 +1,11 @@
 import React from "react"
-import Card from "./components/Card"
 import Header from "./components/Header"
-import movies from "./movies.json"
+import Card from "./components/Card"
+import AddMovie from "./components/AddMovie"
 
 export default function App() {
 
-  const [watched, setWatched] = React.useState(movies)
+  const [watched, setWatched] = React.useState([])
 
   function toggleWatched(id){
     const updateMovies = watched.map(movie => (
@@ -38,6 +38,7 @@ export default function App() {
        watchedMovies={watched.filter(movie => movie.watched).length} 
        nonWatchedMovies={watched.filter(movie => !movie.watched).length} 
        />
+      <AddMovie addMovie={setWatched} />
       <div className="movie-grid">{movieList}</div>
     </>
   )
