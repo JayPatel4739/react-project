@@ -2,14 +2,13 @@ import React from "react"
 import Header from "./components/Header"
 import Card from "./components/Card"
 import AddMovie from "./components/AddMovie"
-import movies from "./movies.json"
 
 function loadMovies() {
   const saved = localStorage.getItem("movie-watchlist")
   if (saved) {
     try { return JSON.parse(saved) } catch {}
   }
-  return movies
+  return []
 }
 
 export default function App() {
