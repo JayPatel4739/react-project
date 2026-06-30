@@ -2,10 +2,23 @@ import React from "react"
 import Header from "./components/Header"
 import Card from "./components/Card"
 import AddMovie from "./components/AddMovie"
+import movies from "./movies.json"
+
+function loadMovies() {
+  const saved = localStorage.getItem("movie-watchlist")
+  if (saved) {
+    try { return JSON.parse(saved) } catch {}
+  }
+  return movies
+}
 
 export default function App() {
 
-  const [watched, setWatched] = React.useState([])
+  const [watched, setWatched] = React.useState(loadMovies)
+
+  React.useEffect(() => {
+    localStorage.setItem("movie-watchlist", JSON.stringify(watched))
+  }, [watched])
 
   function toggleWatched(id){
     const updateMovies = watched.map(movie => (
